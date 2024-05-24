@@ -12,6 +12,10 @@ if(Boost_FOUND)
 endif()
 
 find_package(libuvc REQUIRED)
+#find_package(libuvc-ros REQUIRED)
+
+set(libuvc_INCLUDE_DIRS "/usr/local/include/libuvc")
+set(libuvc_LIBRARIES "/usr/local/lib/libuvc.so")
 
 #MACHINE = $(shell uname -m)
 execute_process(COMMAND uname -m  OUTPUT_VARIABLE  MACHINES )
