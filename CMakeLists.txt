@@ -1,9 +1,15 @@
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 3.5.0)
 project(astra_camera)
 
 find_package(catkin REQUIRED camera_info_manager dynamic_reconfigure image_transport nodelet sensor_msgs roscpp message_generation)
 
-find_package(Boost REQUIRED COMPONENTS system thread)
+find_package(Boost REQUIRED COMPONENTS system thread filesystem)
+
+if(Boost_FOUND)
+    include_directories(${Boost_INCLUDE_DIRS})
+    link_directories(${Boost_LIBRARY_DIRS})
+    add_definitions(${Boost_LIB_DIAGNOSTIC_DEFINITIONS})
+endif()
 
 find_package(libuvc REQUIRED)
 
