@@ -59,7 +59,7 @@ AstraDriver::AstraDriver(ros::NodeHandle& n, ros::NodeHandle& pnh) :
     ir_subscribers_(false),
     color_subscribers_(false),
     depth_subscribers_(false),
-    depth_raw_subscribers_(false),
+    depth_raw_subscribers_(true),
     uvc_flip_(0)
 {
 
