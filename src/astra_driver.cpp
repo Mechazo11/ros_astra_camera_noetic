@@ -685,6 +685,7 @@ void AstraDriver::newDepthFrameCallback(sensor_msgs::ImagePtr image)
 
       if (depth_raw_subscribers_)
       {
+        // std::cout << "FOO\n" << std::endl;
         pub_depth_raw_.publish(image, cam_info);
       }
 
